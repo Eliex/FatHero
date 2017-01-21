@@ -188,13 +188,13 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
                 if(missiles.size()==0)
                 {
                     missiles.add(new Missile(BitmapFactory.decodeResource(getResources(),R.drawable.
-                            missile),WIDTH + 10, HEIGHT/2, 45, 15, player.getScore(), 13));
+                            missile),WIDTH + 10, HEIGHT/2, 45, 24, player.getScore(), 8));
                 }
                 else
                 {
 
                     missiles.add(new Missile(BitmapFactory.decodeResource(getResources(),R.drawable.missile),
-                            WIDTH+10, (int)(rand.nextDouble()*(HEIGHT - (maxBorderHeight * 2))+maxBorderHeight),45,15, player.getScore(),13));
+                            WIDTH+10, (int)(rand.nextDouble()*(HEIGHT - (maxBorderHeight * 2))+maxBorderHeight),45,24, player.getScore(),8));
                 }
 
                 //reset timer
@@ -273,6 +273,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback
     {
         final float scaleFactorX = getWidth()/(WIDTH*1.f);
         final float scaleFactorY = getHeight()/(HEIGHT*1.f);
+
+        System.out.println("viewpoint x "+getWidth());
+        System.out.println("viewpoint x2 "+getHeight());
 
         if(canvas!=null) {
             final int savedState = canvas.save();
